@@ -122,7 +122,9 @@ public class ProjectApp {
 		
 		projectService.deleteProject(projectId);
 		System.out.println("Project " + projectId + " was deleted successfully.");
-		
+		if (Objects.nonNull(curProject) && curProject.getProjectId().equals(projectId)) {
+			curProject = null;
+		}
 	}
 
 	private void listProject() {
